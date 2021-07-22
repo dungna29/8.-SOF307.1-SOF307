@@ -41,13 +41,13 @@ void Bai2_ThuatToanNoiBot()
 	// 	}
 	// }
 
-	
+
 	//2 Cách học 1 thuật toán: Bút và giấy, Triển khai Excel, Word...,In từng bường trong thuật toán trên code
 	for (int i = 0; i < 5; i++)
 	{
-		printf("Lan Chay Thu i = %d \n",i);
+		printf("Lan Chay Thu i = %d \n", i);
 		printf("Gia Tri tai vi tri %d \n", arrNumber[i]);
-		for (int j = i +1; j < 6; j++)
+		for (int j = i + 1; j < 6; j++)
 		{
 			printf("Gia tri arrNumb[i] = %d > arrNumb[j] = %d \n", arrNumber[i], arrNumber[j]);
 			if (arrNumber[i] > arrNumber[j])
@@ -62,7 +62,7 @@ void Bai2_ThuatToanNoiBot()
 			}
 			printf("\n");
 		}
-		printf("Sau khi sap xep o lan chay thu %d \n",i);
+		printf("Sau khi sap xep o lan chay thu %d \n", i);
 		for (int i = 0; i < 6; i++)
 		{
 			printf("%d ", arrNumber[i]);
@@ -74,7 +74,118 @@ void Bai2_ThuatToanNoiBot()
 		printf(" %d ", arrNumber[i]);
 	}
 }
+
+void Bai3_VongLap()
+{
+	int arrNumber[] = { 9,8,6,7,5 };
+	//1. Vòng lặp for
+	// for (int i = 0; i < 5; i++)
+	// {
+	// 	printf("%d ", arrNumber[i]);
+	// }
+
+	//2. While
+	// int i = 0;
+	// while (i < 5)
+	// {
+	// 	printf("%d ", arrNumber[i]);
+	// 	i++;
+	// }
+
+	//3. Do While
+	// int i = 0;
+	// do
+	// {
+	// 	printf("%d ", arrNumber[i]);
+	// 	i++;
+	// }
+	// while (i < 5);
+
+	//In 1 bảng cửu chương sử dụng 3 kiểu vòng lặp For, While, Do While
+	//3x1 =3
+	//3x2 =6
+	//3x3 =9
+	// int i = 1;
+	// do
+	// {
+	// 	printf(" %d x %d  = %d \n",3,i, 3*i);
+	// 	i++;
+	// } while (i < 10);
+
+	//In full bảng cửu chương dùng While và Do While
+	int i = 1;
+	int j = 1;
+	do
+	{
+		do
+		{
+			printf(" %d x %d  = %d \n", i, j, i * j);
+			j++;
+		} while (j < 10);
+		j = 1;
+		i++;
+	} while (i < 10);
+}
+/*
+ *Đệ quy trong C - Trong lập trình, một hàm được gọi là đệ quy nếu bên trong thân hàm có một lời gọi đến chính nó.
+ *Hàm đệ quy luôn có điều kiện dừng được gọi là “điểm neo”. Khi đạt tới điểm neo, hàm sẽ không gọi chính nó nữa.
+ */
+void Bai4_DeQuy1(int diemBatDau)
+{
+	printf("Chao cac ban %d\n", diemBatDau);
+	if (diemBatDau < 10)
+	{
+		diemBatDau++;
+		Bai4_DeQuy1(diemBatDau);
+	}
+}
+//Bài tập 4: Dùng đệ qui để in mảng dưới đây ra màn hình
+void inMang1(int diemBatDau)
+{
+	int arrNumber[] = { 9,8,6,7,5 };
+	printf("%d ", arrNumber[diemBatDau]);
+	if (diemBatDau < 4)
+	{
+		diemBatDau++;
+		inMang1(diemBatDau);
+	}
+}
+void inMang2(int diemBatDau, int arrNumber[])
+{
+	printf("%d ", arrNumber[diemBatDau]);
+	if (diemBatDau < 4)
+	{
+		diemBatDau++;
+		inMang2(diemBatDau, arrNumber);
+	}
+}
+//Bài 4.1: Viết 1 chương trình cho phép cộng tổng các số có trong 1 mảng
+void BaiTap41(int arr[], int i, int leng, int kq) {
+	if (i < leng)
+	{
+		kq = kq + arr[i];
+		printf("\n%d", kq);
+		i++;
+		BaiTap41(arr, i, leng, kq);
+	}
+	printf("\t%d", kq);
+}
+int Bai4_TongCacSoArr(int arr[], int i, int kq)
+{
+	if (i < 5)
+	{
+		kq += arr[i];
+		i++;
+		Bai4_TongCacSoArr(arr, i, kq);
+	}
+	return kq;
+	
+}
 int main()
 {
-	Bai2_ThuatToanNoiBot();
+	int arrNumber[] = { 9,8,6,7,5 };
+	printf("Tong cac so: %d", Bai4_TongCacSoArr(arrNumber, 0, 0));
+	//BaiTap41(arrNumber, 0, 5, 0);
+	//inMang2(0, arrNumber);	
+	//Bai4_DeQuy1(0);
 }
