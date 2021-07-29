@@ -170,22 +170,34 @@ void BaiTap41(int arr[], int i, int leng, int kq) {
 	}
 	printf("\t%d", kq);
 }
-int Bai4_TongCacSoArr(int arr[], int i, int kq)
+void Bai4_TongCacSoArr(int arr[], int i, int kq)
 {
 	if (i < 5)
 	{
 		kq += arr[i];
 		i++;
 		Bai4_TongCacSoArr(arr, i, kq);
+		if (i == 5)
+		{
+			printf("%d ", kq);
+		}
 	}
-	return kq;
 	
+	//return kq;
+
 }
+/* struct trong lập trình C gọi là kiểu dữ liệu do người dùng tự định nghĩa
+ * struct structureName
+	{
+		dataType member1;
+		dataType member2;
+		...
+	};
+ */
 int main()
 {
-	int arrNumber[] = { 9,8,6,7,5 };
-	printf("Tong cac so: %d", Bai4_TongCacSoArr(arrNumber, 0, 0));
-	//BaiTap41(arrNumber, 0, 5, 0);
-	//inMang2(0, arrNumber);	
-	//Bai4_DeQuy1(0);
+	int arrNumber[] = { 9,8,6,7,5 };	
+	Bai4_TongCacSoArr(arrNumber, 0, 0);
+	//printf("Tong cac so: %d", );
+
 }
