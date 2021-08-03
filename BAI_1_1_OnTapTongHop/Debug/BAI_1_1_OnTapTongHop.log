@@ -1,0 +1,5 @@
+﻿  Main.c
+F:\Dungna29 Fpoly\8. Demo\CauTrucDuLieuVaGiaiThuat\8.-SOF307.1-SOF307\8.SOF307.1_SOF307\BAI_1_1_OnTapTongHop\Main.c(12,6): warning C4101: 'arrTemp': unreferenced local variable
+F:\Dungna29 Fpoly\8. Demo\CauTrucDuLieuVaGiaiThuat\8.-SOF307.1-SOF307\8.SOF307.1_SOF307\BAI_1_1_OnTapTongHop\Main.c(212,23): warning C4101: 'sv2': unreferenced local variable
+F:\Dungna29 Fpoly\8. Demo\CauTrucDuLieuVaGiaiThuat\8.-SOF307.1-SOF307\8.SOF307.1_SOF307\BAI_1_1_OnTapTongHop\Main.c(224,18): warning C4101: 'sv': unreferenced local variable
+  BAI_1_1_OnTapTongHop.vcxproj -> F:\Dungna29 Fpoly\8. Demo\CauTrucDuLieuVaGiaiThuat\8.-SOF307.1-SOF307\8.SOF307.1_SOF307\Debug\BAI_1_1_OnTapTongHop.exe
